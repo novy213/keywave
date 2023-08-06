@@ -9,12 +9,6 @@
     --c-border-active: #09ABC3;
     --c-shadow: rgba(41, 41, 86, 0.06);
     --c-shadow-active: rgba(9, 171, 195, 0.25);
-    --eye-background: 0;
-    --eye-offset: 3px;
-    --eye-wrapper-y: 0;
-    --eye-y: 0;
-    --eye-x: 0;
-    --eye-s: 1;
     width: 320px;
     position: relative;
     border-radius: 7px;
@@ -46,54 +40,12 @@
     height: 45px;
     color: white;
     padding: 12px 41px 12px 16px;
-    transform: translateY(var(--y, var(--default-y, 0))) translateZ(0);
-    opacity: var(--o, var(--default-o, 1));
-    pointer-events: var(--pe, var(--default-pe, auto));
     transition: filter 0.35s, transform 0.4s, opacity 0.25s;
-}
-.password-field input::-moz-placeholder {
-    color: white;
-    -moz-transition: color 0.25s;
-    transition: color 0.25s;
-}
-.password-field input:-ms-input-placeholder {
-    color: white;
-    -ms-transition: color 0.25s;
-    transition: color 0.25s;
-}
-.password-field input::placeholder {
-    color: white;
-    transition: color 0.25s;
-}
-.password-field input::-moz-selection {
-    color: white;
-    background: var(--c-background-selection);
-}
-.password-field input::selection {
-    color: white;
-    background: var(--c-background-selection);
-}
-.password-field input:focus::-moz-placeholder, .password-field input:hover::-moz-placeholder {
-    color: white;
-}
-.password-field input:focus:-ms-input-placeholder, .password-field input:hover:-ms-input-placeholder {
-    color: white;
-}
-.password-field input:focus::placeholder, .password-field input:hover::placeholder {
-    color: white;
 }
 .password-field input:not(.clear) {
     width: 100%;
 }
-.password-field input.clear {
-    --y: var(--clear-y, 12px);
-    --o: var(--clear-o, 0);
-    --pe: var(--clear-pe, none);
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-}
+
 .password-field button {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
@@ -106,47 +58,9 @@
     color: white;
     transition: color 0.25s, transform 0.15s;
 }
-.password-field button:hover {
-    color: white;
-}
+
 .password-field button:active {
     --s: .95;
-}
-.password-field button svg {
-    display: block;
-    width: 23px;
-    height: 23px;
-    pointer-events: none;
-}
-.password-field button svg .top,
-.password-field button svg .bottom,
-.password-field button svg .lashes {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.5px;
-    stroke-linecap: round;
-}
-.password-field button svg .lashes {
-    stroke-dasharray: 3px;
-    stroke-dashoffset: var(--eye-offset);
-}
-.password-field button svg .top {
-    fill: var(--c-background);
-    fill-opacity: var(--eye-background);
-}
-.password-field button svg .eye {
-    fill: currentColor;
-    transform-origin: 10.5px 13.5px;
-    transform: translate(var(--eye-x), var(--eye-y)) scale(var(--eye-s)) translateZ(0);
-    transition: transform var(--eye-duration, 0.3s);
-}
-.password-field.show {
-    --default-y: -12px;
-    --default-o: 0;
-    --default-pe: none;
-    --clear-y: 0;
-    --clear-o: 1;
-    --clear-pe: auto;
 }
 
 html {
@@ -159,108 +73,22 @@ body {
     height: 100vh;
     background: #1a2b3c;
 }
-.email-input {
-    --text: #fff;
-    --text-placeholder: #fff;
-    --icon: #fff;
-    --icon-focus: #09ABC3;
-    --icon-invalid: #F04949;
-    --icon-valid: #16BF78;
-    --background: transparent;
-    --border: #D1D6EE;
-    --border-hover: #A6ACCD;
-    --border-focus: #09ABC3;
-    --shadow-focus: rgba(39, 94, 254, 0.32);
-    position: relative;
-    max-width: 320px;
+#mail{
+    transition: opacity 0.25s;
 }
-.email-input input {
-    width: 100%;
-    -webkit-appearance: none;
-    outline: none;
-    display: block;
-    margin: 0;
-    padding: 8px 16px 8px 16px;
-    line-height: 26px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-family: Calibri;
-    color: var(--text);
-    border: 1px solid var(--bc, var(--border));
-    background: var(--background);
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-.email-input input::-moz-placeholder {
-    color: var(--text-placeholder);
-}
-.email-input input:-ms-input-placeholder {
-    color: var(--text-placeholder);
-}
-.email-input input::placeholder {
-    color: var(--text-placeholder);
-}
-.email-input svg {
-    width: 16px;
-    height: 16px;
-    top: 14px;
-    right: 14px;
-    display: block;
-    position: absolute;
-    fill: none;
-    stroke: var(--i, var(--icon));
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.6;
-    transition: stroke 0.3s;
-}
-.email-input svg path {
-    stroke-dasharray: 80;
-    stroke-dashoffset: var(--path, 170);
-    transition: stroke-dashoffset 0.5s ease var(--path-delay, 0.3s);
-}
-.email-input svg polyline {
-    stroke-dasharray: 12;
-    stroke-dashoffset: var(--tick, 12);
-    transition: stroke-dashoffset 0.45s ease var(--tick-delay, 0s);
-}
-.email-input:hover {
-    --bc: var(--border-hover);
-}
-.email-input:focus-within {
-    --bc: var(--border-focus);
-    --i: var(--icon-focus);
-}
-.email-input:focus-within input {
-    box-shadow: 0 1px 6px -1px var(--shadow-focus);
-}
-.email-input:not(.valid) input:not(:-moz-placeholder-shown):not(:focus) + svg {
-    --i: var(--icon-invalid);
-}
-.email-input:not(.valid) input:not(:-ms-input-placeholder):not(:focus) + svg {
-    --i: var(--icon-invalid);
-}
-.email-input:not(.valid) input:not(:placeholder-shown):not(:focus) + svg {
-    --i: var(--icon-invalid);
-}
-.email-input.valid {
-    --i: var(--icon-valid);
-    --path: 132;
-    --path-delay: 0s;
-    --tick: 0;
-    --tick-delay: .3s;
+.password-field img.hidden {
+    opacity: 0;
 }
 
 * {
     box-sizing: inherit;
     font-family: Calibri;
+    margin: 0;
 }
 *:before, *:after {
     box-sizing: inherit;
 }
 
-body .email-input {
-    width: 100%;
-}
 body input[type=submit]{
     background: white;
     border: 1px solid white;
@@ -350,6 +178,7 @@ form h1{
 #ResetPassword:hover{
     cursor: pointer;
 }
+
 .register{
     display: flex;
     float: right;
