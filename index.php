@@ -1,3 +1,11 @@
+<?php
+if(isset($_SESSION['loged'])){
+
+}
+else{
+    header('Location: '.'/sites/login.php');
+}
+?>
 <!doctype html>
 <html lang="pl">
 <head>
@@ -8,13 +16,6 @@
     <title>Keywave</title>
 </head>
 <body>
-<?php
-if(isset($_SESSION['loged'])){
 
-}
-else{
-    header('Location: '.'/sites/login.php');
-}
-?>
 </body>
 </html>

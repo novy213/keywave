@@ -20,7 +20,7 @@
         <span style="--i:7">e</span>
     </div>
     <div class="register">
-        <p>Register</p>
+        <button id="RegisterButton">Register</button>
     </div>
 </header>
 <center>
@@ -29,22 +29,22 @@
         <h1>Login</h1>
         <div class="password-field">
             <button type="button">
-                <img src="../src/mail.png" alt="mail" style="width: 25px;" id="mail">
+                <img src="http://localhost/img/mail.png" alt="mail" style="width: 25px;" id="mail">
             </button>
-            <input type="email" placeholder="example@example.com" id="EmailInput" onchange="Email()">
+            <input type="email" placeholder="example@example.com" id="EmailInput" onchange="Email()" name="email">
         </div>
         <br>
         <div class="password-field">
             <button type="button">
-                <img onclick="Eye()" src="../src/visible.png" alt="eye" style="width: 25px" id="eye">
+                <img onclick="Eye()" src="http://localhost/img/hide.png" alt="eye" style="width: 25px" id="eye">
             </button>
-            <input type="password" placeholder="Password" id="PasswordInput">
+            <input type="password" placeholder="Password" id="PasswordInput" name="password">
         </div>
         <br><br>
         <input type="submit" value="Login">
         <input type="button" id="ResetPassword" value="Forgot password?">
     </form>
-<div class="login">
+</div>
 </center>
 <script  src="../javascript/loginJS.js"></script>
 </body>

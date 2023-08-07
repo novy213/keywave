@@ -38,10 +38,6 @@ function Email(){
         }
     }
 }
-document.getElementById("ResetPassword").addEventListener('click',()=>{
-    location.href = "./restorePassword.php";
-});
-
-document.getElementById("RegisterButton").addEventListener('click',()=>{
-    location.href = "./register.php";
+document.getElementById("LoginButton").addEventListener('click',()=>{
+    location.href = "./login.php";
 });
