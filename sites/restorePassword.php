@@ -5,9 +5,48 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login - Keywave</title>
+    <link rel="stylesheet" href="../styles/restoreStyle.css">
 </head>
 <body>
-<h1>Restore</h1>
+<header>
+    <div class="wavy">
+        <span style="--i:1">K</span>
+        <span style="--i:2">e</span>
+        <span style="--i:3">y</span>
+        <span style="--i:4">w</span>
+        <span style="--i:5">a</span>
+        <span style="--i:6">v</span>
+        <span style="--i:7">e</span>
+    </div>
+    <div class="login">
+        <button id="LoginButton">Login</button>
+    </div>
+    <div class="login">
+        <button id="RegisterButton">Register</button>
+    </div>
+</header>
+<center>
+    <div class="restoreBox">
+        <form method="post">
+            <h1>Restore  password</h1>
+            <div class="password-field">
+                <button type="button" id="EmailSendButton" onclick="EmailSend()">
+                    <label for="mail" id="LabelForMail">Send mail</label>
+                    <img src="http://localhost/img/mail.png" alt="mail" style="width: 25px;" id="mail">
+                </button>
+                <input type="email" placeholder="example@example.com" id="EmailInput" onchange="Email()" name="email">
+            </div>
+            <br>
+            <div class="password-field">
+                <input type="text" placeholder="code" id="NameInput" name="name">
+            </div>
+            <br>
+            <br><br>
+            <input type="submit" value="Change password">
+        </form>
+    </div>
+</center>
+<script  src="../javascript/restoreJS.js"></script>
 </body>
 </html>
