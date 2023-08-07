@@ -61,6 +61,7 @@
             $q = "insert into user values(null, '$name', '$last_name','$email', AES_ENCRYPT('klucz','$password'));";
             $wynik = mysqli_query($db, $q);
             mysqli_close($db);
+            echo "<script>location.href = './login.php';</script>";
         }
         ?>
     </div>

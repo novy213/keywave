@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_SESSION['loged'])){
 
 }
@@ -16,6 +17,16 @@ else{
     <title>Keywave</title>
 </head>
 <body>
-
+<?php
+echo $_SESSION['loged'];
+?>
+<form method="post">
+    <input type="submit" name="submit">
+</form>
+<?php
+if(isset($_POST['submit'])){
+    session_destroy();
+}
+?>
 </body>
 </html>

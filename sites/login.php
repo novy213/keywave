@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['loged'])){
+    header('Location: '.'../index.php');
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -41,9 +47,23 @@
             <input type="password" placeholder="Password" id="PasswordInput" name="password">
         </div>
         <br><br>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" name="submit">
         <input type="button" id="ResetPassword" value="Forgot password?">
     </form>
+    <?php
+    if(isset($_POST['submit'])){
+        $db = mysqli_connect('keywave-db-1', 'root', 'admin', 'keywave');
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $q = "select * from user where email='$email' && password = AES_ENCRYPT('klucz','$password');";
+        $wynik = mysqli_query($db, $q);
+        if($wynik!=null){
+            $_SESSION['loged'] = mysqli_fetch_row($wynik)[0];
+            echo "<script>location.href = '../index.php';</script>";
+        }
+        mysqli_close($db);
+    }
+    ?>
 </div>
 </center>
 <script  src="../javascript/loginJS.js"></script>
