@@ -32,7 +32,7 @@
             </div>
             <br>
             <div class="password-field">
-                <input type="text" placeholder="Last name" id="NameInput" name="name">
+                <input type="text" placeholder="Last name" id="NameInput" name="last_name">
             </div>
             <br>
             <div class="password-field">
@@ -49,8 +49,20 @@
                 <input type="password" placeholder="Password" id="PasswordInput" name="password">
             </div>
             <br><br>
-            <input type="submit" value="Register">
+            <input type="submit" value="Register" name="submit">
         </form>
+        <?php
+        if(isset($_POST['submit'])) {
+            $db = mysqli_connect('keywave-db-1', 'root', 'admin', 'keywave');
+            $name = $_POST['name'];
+            $last_name = $_POST['last_name'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $q = "insert into user values(null, '$name', '$last_name','$email', AES_ENCRYPT('klucz','$password'));";
+            $wynik = mysqli_query($db, $q);
+            mysqli_close($db);
+        }
+        ?>
     </div>
 </center>
 <script  src="../javascript/registerJS.js"></script>
