@@ -3,18 +3,6 @@ const regex = new RegExp(
     '(\\".+\\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])' +
     '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'
 );
-function Eye(){
-    let src = document.getElementById("eye").src;
-    var input = document.getElementById("PasswordInput");
-    if(src=="http://localhost/img/visible.png"){
-        document.getElementById("eye").src = "http://localhost/img/hide.png";
-        input.type = "text";
-    }
-    else if(src=="http://localhost/img/hide.png"){
-        document.getElementById("eye").src = "http://localhost/img/visible.png";
-        input.type = "password";
-    }
-}
 function Email(){
     let text = document.getElementById("EmailInput").value;
     if(regex.test(text)){
@@ -46,15 +34,27 @@ document.getElementById("RegisterButton").addEventListener('click',()=>{
     location.href = "./register.php";
 });
 
-function EmailSend() {
+function EmailSend(fromButton = false) {
+    if (fromButton) {
+        var email = document.getElementById("EmailInput").value;
+        if(!regex.test(email)){
+            alert("Prosze podać poprawny email");
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "../php/emailSend.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState ===4 && xhr.status===200){
+                alert(xhr.responseText);
+            }
+        }
+        xhr.send("email=" + encodeURIComponent(email));
+    }
     document.getElementById('EmailSendButton').style.opacity = 0.5;
     document.getElementById('EmailSendButton').disabled = true;
-
     var czas = parseInt(getCookie('czas')) || 120;
-    if (czas < 0) {
-        // Wysłanie e-maila
-    }
-
     var licznik = setInterval(function() {
         document.getElementById('LabelForMail').textContent = 'Pozostało: ' + czas + ' sekund';
         czas--;
@@ -63,27 +63,24 @@ function EmailSend() {
         if (czas < 0) {
             clearInterval(licznik);
             document.getElementById('EmailSendButton').disabled = false;
-            document.getElementById('EmailSendButton').textContent = "Send mail";
+            document.getElementById('LabelForMail').textContent = "Send mail";
             document.getElementById('EmailSendButton').style.opacity = 1;
             deleteCookie('czas');
         }
-    }, 1000);
+    }, 10);
 }
-// Funkcja do odczytywania pliku cookie
 function getCookie(name) {
     var value = "; " + document.cookie;
     var parts = value.split("; " + name + "=");
     if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-// Funkcja do ustawiania pliku cookie
 function setCookie(name, value) {
     var expirationDate = new Date();
     expirationDate.setSeconds(expirationDate.getSeconds() + value);
     document.cookie = name + "=" + value + "; expires=" + expirationDate.toUTCString() + "; path=/";
 }
 
-// Funkcja do usuwania pliku cookie
 function deleteCookie(name) {
     document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/;';
 }

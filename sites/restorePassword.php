@@ -31,7 +31,7 @@
         <form method="post">
             <h1>Restore  password</h1>
             <div class="password-field">
-                <button type="button" id="EmailSendButton" onclick="EmailSend()">
+                <button type="button" id="EmailSendButton" onclick="EmailSend(true)">
                     <label for="mail" id="LabelForMail">Send mail</label>
                     <img src="http://localhost/img/mail.png" alt="mail" style="width: 25px;" id="mail">
                 </button>
