@@ -58,7 +58,7 @@
             $last_name = $_POST['last_name'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $q = "insert into user values(null, '$name', '$last_name','$email', AES_ENCRYPT('klucz','$password'));";
+            $q = "insert into user values(null, '$name', '$last_name','$email', SHA2(CONCAT('klucz', '$password'), 256));";
             $wynik = mysqli_query($db, $q);
             mysqli_close($db);
             echo "<script>location.href = './login.php';</script>";

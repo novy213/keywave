@@ -55,7 +55,7 @@ if(isset($_SESSION['loged'])){
         $db = mysqli_connect('keywave-db-1', 'root', 'admin', 'keywave');
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $q = "select * from user where email='$email' && password = AES_ENCRYPT('klucz','$password');";
+        $q = "select * from user where email='$email' && password = SHA2(CONCAT('klucz', '$password'), 256);";
         $wynik = mysqli_query($db, $q);
         if($wynik!=null){
             $_SESSION['loged'] = mysqli_fetch_row($wynik)[0];

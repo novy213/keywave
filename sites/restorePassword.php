@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -39,12 +42,27 @@
             </div>
             <br>
             <div class="password-field">
-                <input type="text" placeholder="code" id="NameInput" name="name">
+                <input type="text" placeholder="Kod weryfikacyjny" name="code">
             </div>
             <br>
             <br><br>
-            <input type="submit" value="Change password">
+            <input type="submit" value="Change password" name="submit">
         </form>
+        <?php
+        if(isset($_POST['submit'])){
+            $db = mysqli_connect('keywave-db-1','root','admin','keywave');
+            $code = $_POST['code'];
+            $q = "select * from reset_password where code='$code';";
+            $wynik = mysqli_fetch_row(mysqli_query($db, $q));
+            if($wynik!=null) {
+                $_SESSION['email'] = $wynik[1];
+                echo "<script>location.href = './resetPassword.php';</script>";
+            }
+            else{
+                echo "<script>alert('Niepoprawny kod weryfikacyjny')</script>";
+            }
+        }
+        ?>
     </div>
 </center>
 <script  src="../javascript/restoreJS.js"></script>

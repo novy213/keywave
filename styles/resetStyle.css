@@ -9,7 +9,7 @@
     --c-border-active: #09ABC3;
     --c-shadow: rgba(41, 41, 86, 0.06);
     --c-shadow-active: rgba(9, 171, 195, 0.25);
-    width: 320px;
+    width: auto;
     position: relative;
     border-radius: 7px;
     background: transparent;
@@ -77,9 +77,6 @@ body {
     height: 100vh;
     background: #1a2b3c;
 }
-#mail{
-    transition: opacity 0.25s;
-}
 .password-field img.hidden {
     opacity: 0;
 }
@@ -93,7 +90,7 @@ body {
     box-sizing: inherit;
 }
 
-body input[type=submit]{
+input[type=submit]{
     background: white;
     border: 1px solid white;
     border-radius: 6px;
@@ -103,34 +100,31 @@ body input[type=submit]{
     height: 35px;
     font-size: 20px;
 }
-body input[type=submit]:hover{
+input[type=submit]:hover{
     transition: 0.5s;
     background: transparent;
     color: white;
     box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 1);
 }
-header{
-    width: 100%;
-    margin: 0;
-    color: white;
-    background: rgb(0,0,0,0.5);
-    height: 90px;
-}
-.restoreBox{
+.resetBox{
     background: rgba(0,0,0,0.15);
     border-radius: 15px;
-    margin-top: 5%;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    display: block;
+    justify-items: center;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
     padding: 100px;
     border: 1px solid white;
     width: 35%;
 }
 .wavy {
-    position: relative;
-    float: left;
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .wavy span {
@@ -138,10 +132,10 @@ header{
     position: relative;
     display: inline-block;
     margin-left: 5px;
-    font-size: 80px;
     margin-top: 25px;
     color: #fff;
-    font-size: 2em;
+    font-weight: bold;
+    font-size: 3em;
     animation: animate 3s ease-in-out infinite;
     animation-delay: calc(0.1s * var(--i));
 }
@@ -170,49 +164,4 @@ form h1{
     100% {
         transform: translateY(0px);
     }
-}
-#ResetPassword{
-    margin-top: 10px;
-    background: transparent;
-    border: none;
-    text-decoration: underline;
-    color: white;
-    font-weight: bold;
-    width: 40%;
-}
-#ResetPassword:hover{
-    cursor: pointer;
-}
-
-.login{
-    display: flex;
-    float: right;
-    height: 100%;
-    align-items: center;
-    margin-right: 40px;
-}
-.login:nth-child(2){
-    display: flex;
-    float: right;
-    height: 100%;
-    align-items: center;
-    margin-right: 70px;
-}
-.login button{
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    background: white;
-    border: 1px solid white;
-    border-radius: 10px;
-    color: black;
-    font-size: 16px;
-    transition: 0.5s;
-}
-.login button:hover{
-    transition: 0.5s;
-    background: transparent;
-    color: white;
-    box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 1);
-    cursor: pointer;
 }
