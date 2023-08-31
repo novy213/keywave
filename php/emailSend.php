@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['email'])){
+    include '../php/db.php';
     $email = $_POST['email'];
-    $db = mysqli_connect('keywave-db-1','root','admin','keywave');
     $code = rand(1000,9999);
     $q = "insert into reset_password values (null, '$email', '$code');";
     $wynik = mysqli_query($db, $q);

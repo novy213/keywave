@@ -51,8 +51,8 @@ if(isset($_SESSION['loged'])){
         <input type="button" id="ResetPassword" value="Forgot password?">
     </form>
     <?php
+    include '../php/db.php';
     if(isset($_POST['submit'])){
-        $db = mysqli_connect('keywave-db-1', 'root', 'admin', 'keywave');
         $email = $_POST['email'];
         $password = $_POST['password'];
         $q = "select * from user where email='$email' && password = SHA2(CONCAT('klucz', '$password'), 256);";

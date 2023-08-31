@@ -37,7 +37,7 @@ if($email==null){
         <input type="submit" value="Change password" name="submit">
     </form>
     <?php
-    $db = mysqli_connect('keywave-db-1','root','admin','keywave');
+    include '../php/db.php';
     $pas = $_POST['password'];
     $repas = $_POST['rePassword'];
     if($pas == $repas){

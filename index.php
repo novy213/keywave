@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['loged'])){
-
+    include 'php/db.php';
 }
 else{
     header('Location: '.'/sites/login.php');

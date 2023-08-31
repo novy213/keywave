@@ -52,8 +52,8 @@
             <input type="submit" value="Register" name="submit">
         </form>
         <?php
+        include '../php/db.php';
         if(isset($_POST['submit'])) {
-            $db = mysqli_connect('keywave-db-1', 'root', 'admin', 'keywave');
             $name = $_POST['name'];
             $last_name = $_POST['last_name'];
             $email = $_POST['email'];
