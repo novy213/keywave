@@ -7,20 +7,20 @@ function Email(){
     let text = document.getElementById("EmailInput").value;
     if(regex.test(text)){
         const image = document.getElementById('mail');
-        if(image.src!='http://localhost/img/check.png') {
+        if(image.src!='../img/check.png') {
             image.classList.add('hidden');
             setTimeout(() => {
-                image.src = 'http://localhost/img/check.png';
+                image.src = '../img/check.png';
                 image.classList.remove('hidden');
             }, 250);
         }
     }
     else if(!regex.test(text)){
         const image = document.getElementById('mail');
-        if(image.src!='http://localhost/img/mail.png') {
+        if(image.src!='../img/mail.png') {
             image.classList.add('hidden');
             setTimeout(() => {
-                image.src = 'http://localhost/img/mail.png';
+                image.src = '../img/mail.png';
                 image.classList.remove('hidden');
             }, 250);
         }
@@ -67,7 +67,7 @@ function EmailSend(fromButton = false) {
             document.getElementById('EmailSendButton').style.opacity = 1;
             deleteCookie('czas');
         }
-    }, 10);
+    }, 1000);
 }
 function getCookie(name) {
     var value = "; " + document.cookie;

@@ -39,7 +39,7 @@ if(isset($_SESSION['loged'])){
         <br>
         <div class="password-field">
             <button type="button">
-                <img onclick="Eye()" src="http://localhost/img/hide.png" alt="eye" style="width: 25px" id="eye">
+                <img onclick="Eye()" src="http://localhost/img/hide.png" alt="hide" style="width: 25px" id="eye">
             </button>
             <input type="password" placeholder="Password" id="PasswordInput" name="password">
         </div>

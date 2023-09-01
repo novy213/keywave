@@ -4,14 +4,16 @@ const regex = new RegExp(
     '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'
 );
 function Eye(){
-    let src = document.getElementById("eye").src;
+    let alt = document.getElementById("eye").alt;
     var input = document.getElementById("PasswordInput");
-    if(src=="http://localhost/img/visible.png"){
-        document.getElementById("eye").src = "http://localhost/img/hide.png";
+    if(alt=="hide"){
+        document.getElementById("eye").src = "../img/visible.png";
+        document.getElementById("eye").alt = 'visible';
         input.type = "text";
     }
-    else if(src=="http://localhost/img/hide.png"){
-        document.getElementById("eye").src = "http://localhost/img/visible.png";
+    else if(alt=="visible"){
+        document.getElementById("eye").src = "../img/hide.png";
+        document.getElementById("eye").alt = 'hide';
         input.type = "password";
     }
 }
@@ -19,20 +21,20 @@ function Email(){
     let text = document.getElementById("EmailInput").value;
     if(regex.test(text)){
         const image = document.getElementById('mail');
-        if(image.src!='http://localhost/img/check.png') {
+        if(image.src!='../img/check.png') {
             image.classList.add('hidden');
             setTimeout(() => {
-                image.src = 'http://localhost/img/check.png';
+                image.src = '../img/check.png';
                 image.classList.remove('hidden');
             }, 250);
         }
     }
     else if(!regex.test(text)){
         const image = document.getElementById('mail');
-        if(image.src!='http://localhost/img/mail.png') {
+        if(image.src!='../img/mail.png') {
             image.classList.add('hidden');
             setTimeout(() => {
-                image.src = 'http://localhost/img/mail.png';
+                image.src = '../img/mail.png';
                 image.classList.remove('hidden');
             }, 250);
         }
