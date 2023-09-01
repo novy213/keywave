@@ -38,17 +38,18 @@ if($email==null){
     </form>
     <?php
     include '../php/db.php';
-    $pas = $_POST['password'];
-    $repas = $_POST['rePassword'];
-    if($pas == $repas){
-        $q = "update user set password=SHA2(CONCAT('klucz', '$pas'), 256) where email='$email';";
-        $q2 = "delete from reset_password where email='$email';";
-        $wynik = mysqli_query($db, $q);
-        $wynik2 = mysqli_query($db, $q2);
-        if($wynik == 1 && $wynik2==1){
-            echo "<script>Hasło zostało zmienione poprawnie</script>";
+    if(isset($_POST['submit'])) {
+        $pas = $_POST['password'];
+        $repas = $_POST['rePassword'];
+        if ($pas == $repas) {
+            $q = "update user set password=SHA2(CONCAT('klucz', '$pas'), 256) where email='$email';";
+            $q2 = "delete from reset_password where email='$email';";
+            $wynik = mysqli_query($db, $q);
+            $wynik2 = mysqli_query($db, $q2);
+            if ($wynik == 1 && $wynik2 == 1) {
+                echo "<script>alert('Hasło zostało zmienione poprawnie');location.href = './login.php';</script>";
+            } else echo "<script>alert('Spróbuj ponownie później');location.href = './login.php';</script>";
         }
-        else echo "<script>Spróbuj ponownie później</script>";
     }
     ?>
 </div>
