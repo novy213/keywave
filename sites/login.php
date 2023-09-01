@@ -53,7 +53,6 @@ if(isset($_SESSION['loged'])){
     <?php
     include '../php/db.php';
     if(isset($_POST['submit'])){
-        $db = mysqli_connect($servername, $username, $password, $dbname);
         $email = $_POST['email'];
         $password = $_POST['password'];
         $q = "select * from user where email='$email' && password = SHA2(CONCAT('klucz', '$password'), 256);";

@@ -54,7 +54,6 @@
         <?php
         include '../php/db.php';
         if(isset($_POST['submit'])) {
-            $db = mysqli_connect($servername, $username, $password, $dbname);
             $name = $_POST['name'];
             $last_name = $_POST['last_name'];
             $email = $_POST['email'];
