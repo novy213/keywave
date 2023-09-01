@@ -51,6 +51,7 @@ session_start();
         <?php
         include '../php/db.php';
         if(isset($_POST['submit'])){
+            $db = mysqli_connect($servername, $username, $password, $dbname);
             $db = mysqli_connect('keywave-db-1','root','admin','keywave');
             $code = $_POST['code'];
             $q = "select * from reset_password where code='$code';";

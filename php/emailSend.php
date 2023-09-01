@@ -1,6 +1,7 @@
 <?php
 if(isset($_POST['email'])){
     include '../php/db.php';
+    $db = mysqli_connect($servername, $username, $password, $dbname);
     $email = $_POST['email'];
     $code = rand(1000,9999);
     $q = "insert into reset_password values (null, '$email', '$code');";

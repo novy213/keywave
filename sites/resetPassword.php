@@ -41,6 +41,7 @@ if($email==null){
     $pas = $_POST['password'];
     $repas = $_POST['rePassword'];
     if($pas == $repas){
+        $db = mysqli_connect($servername, $username, $password, $dbname);
         $q = "update user set password=SHA2(CONCAT('klucz', '$pas'), 256) where email='$email';";
         $q2 = "delete from reset_password where email='$email';";
         $wynik = mysqli_query($db, $q);
