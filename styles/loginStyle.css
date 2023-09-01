@@ -9,7 +9,7 @@
     --c-border-active: #09ABC3;
     --c-shadow: rgba(41, 41, 86, 0.06);
     --c-shadow-active: rgba(9, 171, 195, 0.25);
-    width: 320px;
+    width: auto;
     position: relative;
     border-radius: 7px;
     background: transparent;
@@ -115,21 +115,23 @@ header{
 .loginBox{
     background: rgba(0,0,0,0.15);
     border-radius: 15px;
-    margin-top: 5%;
+    margin-top: 2.5%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
-    padding: 100px;
     border: 1px solid white;
-    width: 35%;
+    width: 30%;
+    padding: 60px;
+}
+form{
+    width: 100%;
 }
 .wavy {
     position: relative;
-    float: left;
 }
-
 .wavy span {
+    text-shadow: 2px 4px 4px rgba(46,91,173,0.6);
     font-family: Calibri;
     position: relative;
     display: inline-block;
@@ -137,15 +139,15 @@ header{
     font-size: 80px;
     margin-top: 25px;
     color: #fff;
-    font-size: 2em;
+    font-weight: bold;
     animation: animate 3s ease-in-out infinite;
     animation-delay: calc(0.1s * var(--i));
 }
-.wavy span:nth-child(1){
-    margin-left: 15px;
-}
 .wavy span:nth-child(odd){
     color: #09ABC3;
+}
+.wavy span:nth-child(1){
+    margin-left: 15px;
 }
 form h1{
     color: white;
@@ -174,34 +176,24 @@ form h1{
     text-decoration: underline;
     color: white;
     font-weight: bold;
-    width: 40%;
+    width: 100%;
 }
 #ResetPassword:hover{
     cursor: pointer;
 }
-
-.register{
-    display: flex;
-    float: right;
-    height: 100%;
-    align-items: center;
-    margin-right: 70px;
+.registerBox{
+    position: relative;
+    margin-top: 50px;
 }
-.register button{
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    background: white;
-    border: 1px solid white;
-    border-radius: 10px;
-    color: black;
-    font-size: 16px;
-    transition: 0.5s;
-}
-.register button:hover{
-    transition: 0.5s;
+#Register{
+    margin-top: 10px;
+    font-size: 15px;
     background: transparent;
+    border: none;
+    text-decoration: underline;
     color: white;
-    box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 1);
+    font-weight: bold;
+}
+#Register:hover{
     cursor: pointer;
 }

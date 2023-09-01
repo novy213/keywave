@@ -35,6 +35,7 @@ document.getElementById("RegisterButton").addEventListener('click',()=>{
 });
 
 function EmailSend(fromButton = false) {
+    var responseText;
     if (fromButton) {
         var email = document.getElementById("EmailInput").value;
         if(!regex.test(email)){
@@ -47,6 +48,7 @@ function EmailSend(fromButton = false) {
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function (){
             if(xhr.readyState ===4 && xhr.status===200){
+                responseText = xhr.responseText;
                 alert(xhr.responseText);
             }
         }
@@ -54,13 +56,12 @@ function EmailSend(fromButton = false) {
     }
     document.getElementById('EmailSendButton').style.opacity = 0.5;
     document.getElementById('EmailSendButton').disabled = true;
-    var czas = parseInt(getCookie('czas')) || 120;
+    var czas = parseInt(getCookie('czas')) || 60;
     var licznik = setInterval(function() {
         document.getElementById('LabelForMail').textContent = 'Pozostało: ' + czas + ' sekund';
         czas--;
         setCookie('czas', czas);
-
-        if (czas < 0) {
+        if (czas < 0 || responseText == 'Nie można było odnaleźć takiego użytkownika') {
             clearInterval(licznik);
             document.getElementById('EmailSendButton').disabled = false;
             document.getElementById('LabelForMail').textContent = "Send mail";

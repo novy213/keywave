@@ -11,8 +11,10 @@ if($email==null){
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/resetStyle.css">
     <title>Reset password - Keywave</title>
+    <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
 </head>
 <body>
+<center>
 <div class="wavy">
     <span style="--i:1">K</span>
     <span style="--i:2">e</span>
@@ -24,7 +26,7 @@ if($email==null){
 </div>
 <div class="resetBox">
     <form method="post">
-        <h1>Restore  password</h1>
+        <h1>Reset  password</h1>
         <div class="password-field">
             <input type="text" placeholder="Password" name="password">
         </div>
@@ -47,11 +49,13 @@ if($email==null){
             $wynik = mysqli_query($db, $q);
             $wynik2 = mysqli_query($db, $q2);
             if ($wynik == 1 && $wynik2 == 1) {
+                $_SESSION['email'] = null;
                 echo "<script>alert('Hasło zostało zmienione poprawnie');location.href = './login.php';</script>";
             } else echo "<script>alert('Spróbuj ponownie później');location.href = './login.php';</script>";
         }
     }
     ?>
 </div>
+</center>
 </body>
 </html>

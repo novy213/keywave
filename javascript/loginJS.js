@@ -44,6 +44,6 @@ document.getElementById("ResetPassword").addEventListener('click',()=>{
     location.href = "./restorePassword.php";
 });
 
-document.getElementById("RegisterButton").addEventListener('click',()=>{
+document.getElementById("Register").addEventListener('click',()=>{
     location.href = "./register.php";
 });

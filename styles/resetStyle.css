@@ -109,33 +109,31 @@ input[type=submit]:hover{
 .resetBox{
     background: rgba(0,0,0,0.15);
     border-radius: 15px;
-    text-align: center;
-    display: block;
-    justify-items: center;
+    margin-top: 2.5%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
     height: auto;
-    padding: 100px;
     border: 1px solid white;
-    width: 35%;
+    width: 30%;
+    padding: 60px;
 }
 .wavy {
     text-align: center;
     width: 100%;
-    margin-top: 100px;
     margin-bottom: 50px;
 }
 
 .wavy span {
+    text-shadow: 2px 4px 4px rgba(46,91,173,0.6);
     font-family: Calibri;
     position: relative;
     display: inline-block;
     margin-left: 5px;
+    font-size: 80px;
     margin-top: 25px;
     color: #fff;
     font-weight: bold;
-    font-size: 3em;
     animation: animate 3s ease-in-out infinite;
     animation-delay: calc(0.1s * var(--i));
 }

@@ -2,6 +2,18 @@
 if(isset($_POST['email'])){
     include '../php/db.php';
     $email = $_POST['email'];
+    $q = "select * from reset_password where email='$email';";
+    $wynik = mysqli_query($db, $q);
+    if($wynik!=null){
+        $q = "delete from reset_password where email='$email';";
+        $wynik = mysqli_query($db, $q);
+    }
+    $q = "select * from user where email='$email';";
+    $wynik = mysqli_fetch_row(mysqli_query($db, $q));
+    if($wynik==null){
+        echo "Nie można było odnaleźć takiego użytkownika";
+        die;
+    }
     $code = rand(1000,9999);
     $q = "insert into reset_password values (null, '$email', '$code');";
     $wynik = mysqli_query($db, $q);

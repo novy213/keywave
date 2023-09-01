@@ -5,11 +5,12 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Keywave</title>
+    <title>Restore password - Keywave</title>
     <link rel="stylesheet" href="../styles/restoreStyle.css">
+    <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
 </head>
 <body>
-<header>
+<center>
     <div class="wavy">
         <span style="--i:1">K</span>
         <span style="--i:2">e</span>
@@ -19,14 +20,6 @@ session_start();
         <span style="--i:6">v</span>
         <span style="--i:7">e</span>
     </div>
-    <div class="login">
-        <button id="LoginButton">Login</button>
-    </div>
-    <div class="login">
-        <button id="RegisterButton">Register</button>
-    </div>
-</header>
-<center>
     <div class="restoreBox">
         <form method="post">
             <h1>Restore  password</h1>

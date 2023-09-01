@@ -10,9 +10,12 @@ if(isset($_SESSION['loged'])){
     <meta charset="UTF-8">
     <title>Login - Keywave</title>
     <link rel="stylesheet" href="../styles/loginStyle.css">
+    <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
 </head>
 <body>
-<header>
+
+<center>
+
     <div class="wavy">
         <span style="--i:1">K</span>
         <span style="--i:2">e</span>
@@ -22,30 +25,29 @@ if(isset($_SESSION['loged'])){
         <span style="--i:6">v</span>
         <span style="--i:7">e</span>
     </div>
-    <div class="register">
-        <button id="RegisterButton">Register</button>
-    </div>
-</header>
-<center>
 <div class="loginBox">
     <form method="post">
         <h1>Login</h1>
         <div class="password-field">
             <button type="button">
-                <img src="http://localhost/img/mail.png" alt="mail" style="width: 25px;" id="mail">
+                <img src="../img/mail.png" alt="mail" style="width: 25px;" id="mail">
             </button>
             <input type="email" placeholder="example@example.com" id="EmailInput" onchange="Email()" name="email">
         </div>
         <br>
         <div class="password-field">
             <button type="button">
-                <img onclick="Eye()" src="http://localhost/img/hide.png" alt="hide" style="width: 25px" id="eye">
+                <img onclick="Eye()" src="../img/hide.png" alt="hide" style="width: 25px" id="eye">
             </button>
             <input type="password" placeholder="Password" id="PasswordInput" name="password">
         </div>
         <br><br>
         <input type="submit" value="Login" name="submit">
         <input type="button" id="ResetPassword" value="Forgot password?">
+        <div class="registerBox">
+            <p style="color: white; font-size: 20px">Or Sing Up Using</p>
+            <input type="button" id="Register" value="SING UP">
+        </div>
     </form>
     <?php
     include '../php/db.php';

@@ -9,7 +9,7 @@
     --c-border-active: #09ABC3;
     --c-shadow: rgba(41, 41, 86, 0.06);
     --c-shadow-active: rgba(9, 171, 195, 0.25);
-    width: 320px;
+    width: auto;
     position: relative;
     border-radius: 7px;
     background: transparent;
@@ -115,21 +115,32 @@ header{
 .registerBox{
     background: rgba(0,0,0,0.15);
     border-radius: 15px;
-    margin-top: 5%;
+    margin-top: 2.5%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
-    padding: 100px;
+    padding: 60px;
     border: 1px solid white;
-    width: 35%;
+    width: 30%;
+}
+.Login{
+    margin-top: 30px;
+    color: white;
+}
+.Login a{
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
 }
 .wavy {
     position: relative;
-    float: left;
 }
-
+form{
+    width: 100%;
+}
 .wavy span {
+    text-shadow: 2px 4px 4px rgba(46,91,173,0.6);
     font-family: Calibri;
     position: relative;
     display: inline-block;
@@ -137,15 +148,15 @@ header{
     font-size: 80px;
     margin-top: 25px;
     color: #fff;
-    font-size: 2em;
+    font-weight: bold;
     animation: animate 3s ease-in-out infinite;
     animation-delay: calc(0.1s * var(--i));
 }
-.wavy span:nth-child(1){
-    margin-left: 15px;
-}
 .wavy span:nth-child(odd){
     color: #09ABC3;
+}
+.wavy span:nth-child(1){
+    margin-left: 15px;
 }
 form h1{
     color: white;
