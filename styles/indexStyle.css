@@ -1,0 +1,85 @@
+body{
+    font-family: Calibri;
+    height: 100vh;
+    background: #1a2b3c;
+}
+.wavy {
+    position: relative;
+}
+.wavy span {
+    text-shadow: 2px 4px 4px rgba(46,91,173,0.6);
+    font-family: Calibri;
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 80px;
+    margin-top: 25px;
+    color: #fff;
+    font-weight: bold;
+    animation: animate 3s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+.wavy span:nth-child(odd){
+    color: #09ABC3;
+}
+.wavy span:nth-child(1){
+    margin-left: 15px;
+}
+@keyframes animate {
+    0% {
+        transform: translateY(0px);
+    }
+
+    20% {
+        transform: translateY(-20px);
+    }
+
+    40%,
+    100% {
+        transform: translateY(0px);
+    }
+}
+.container{
+    width: 50%;
+    border: 1px solid white;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.Logout {
+    float: left;
+    color: white;
+    background: transparent;
+    border: none;
+    margin: 10px 54.5px;
+    display: block;
+    font-size: 20px;
+    outline: none;
+    position: relative;
+    transition: 0.3s;
+    padding: 10px;
+}
+.Logout:before {
+    content: '';
+    border-bottom: 1px solid #fff;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    transition: 0.3s;
+}
+.Logout:hover:before {
+    width: 100%;
+    padding: 0;
+}
+.Logout:active {
+    background: #000;
+    color: #fff;
+    transition: none;
+}
+form{
+  height: 15%;
+}
