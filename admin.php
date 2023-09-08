@@ -22,7 +22,6 @@ if($adminLoged==null){
 }
 else {
 include 'php/db.php';
-echo "<p>Admin zalogowany</p>";
 }
 if(isset($_POST['zaloguj'])){
     include 'php/db.php';
@@ -40,21 +39,35 @@ form.style.display = 'none';
     else echo "<script>alert('niepoprawne dane')</script>";
 }
 ?>
+<h1 style="width: 100%;text-align: center;color: white">Panel administratora</h1>
+
 <div class="container">
     <div class="header">
 
     </div>
     <div class="content">
         <form method="post">
-            <input type="submit" name="wyloguj">
+            <input type="button" value="Płatności" onclick="Platnosci()">
+            <input type="button" value="Skiny" onclick="Skiny()">
+            <input type="submit" name="wyloguj" value="Wyloguj">
         </form>
         <?php
         if(isset($_POST['wyloguj'])){
             $_SESSION['admin'] = null;
-            echo "<scirpt>location.href = './admin.php'</scirpt>";
+            echo "<script>location.href = './admin.php'</script>";
         }
         ?>
+        <div class="Skiny" id="Skiny" style="display: none">
+            <div class="MenuSkiny">
+
+            </div>
+
+        </div>
+        <div class="Platnosci" id="Platnosci" style="display: none">
+            <h1>Platnosci</h1>
+        </div>
     </div>
 </div>
+<script src="javascript/adminJS.js"></script>
 </body>
 </html>

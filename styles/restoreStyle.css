@@ -163,6 +163,16 @@ form h1{
         transform: translateY(0px);
     }
 }
+footer {
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 10px;
+}
+footer a{
+    color: white;
+    font-weight: bold;
+}
 #ResetPassword{
     margin-top: 10px;
     background: transparent;

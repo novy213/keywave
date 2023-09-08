@@ -57,5 +57,8 @@ if($email==null){
     ?>
 </div>
 </center>
+<footer>
+    &copy; 2023 keywave.pl - Wszelkie prawa zastrzeżone. <a href="./statute.php">Regulamin</a>
+</footer>
 </body>
 </html>

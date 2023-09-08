@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -73,7 +73,7 @@
 </div>
 
 <footer>
-    &copy; 2023 keywave.pl - Wszelkie prawa zastrzeżone.
+    &copy; 2023 keywave.pl - Wszelkie prawa zastrzeżone. <a href="../index.php">Strona główna</a>
 </footer>
 </body>
 </html>

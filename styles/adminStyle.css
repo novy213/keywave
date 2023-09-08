@@ -4,6 +4,7 @@ body{
     background: #1a2b3c;
 }
 .container{
+    margin-top: 50px;
     width: 75%;
     border: 1px solid white;
     border-radius: 15px;
@@ -11,4 +12,19 @@ body{
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+}
+form input{
+    width: 30%;
+    height: 30px;
+    color: white;
+    border-radius: 15px;
+    margin: 15px;
+    background: transparent;
+    border: 1px solid white;
+    transition: 0.5s;
+}
+form input:hover{
+    background: #fff;
+    color: black;
+    transition: 0.5s;
 }

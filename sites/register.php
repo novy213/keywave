@@ -62,6 +62,9 @@
         ?>
     </div>
 </center>
+<footer>
+    &copy; 2023 keywave.pl - Wszelkie prawa zastrzeżone. <a href="./statute.php">Regulamin</a>
+</footer>
 <script  src="../javascript/registerJS.js"></script>
 </body>
 </html>
