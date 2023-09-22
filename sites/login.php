@@ -32,14 +32,14 @@ if(isset($_SESSION['loged'])){
             <button type="button">
                 <img src="../img/mail.png" alt="mail" style="width: 25px;" id="mail">
             </button>
-            <input type="email" placeholder="example@example.com" id="EmailInput" onchange="Email()" name="email">
+            <input type="email" placeholder="example@example.com" id="EmailInput" onchange="Email()" name="email" required="required">
         </div>
         <br>
         <div class="password-field">
             <button type="button">
                 <img onclick="Eye()" src="../img/hide.png" alt="hide" style="width: 25px" id="eye">
             </button>
-            <input type="password" placeholder="Password" id="PasswordInput" name="password">
+            <input type="password" placeholder="Password" id="PasswordInput" name="password" required="required">
         </div>
         <br><br>
         <input type="submit" value="Login" name="submit">

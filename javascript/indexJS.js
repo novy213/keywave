@@ -38,10 +38,29 @@ function Email(){
         }
     }
 }
-document.getElementById("ResetPassword").addEventListener('click',()=>{
-    location.href = "./restorePassword.php";
+document.getElementById("MarketplaceButton").addEventListener('click',()=>{
+    var market = document.getElementById("Marketplace");
+    var wymiana = document.getElementById("WymianaLive");
+    var konto = document.getElementById("MojeKonto");
+    market.style.display  = 'block';
+    wymiana.style.display  = 'none';
+    konto.style.display  = 'none';
 });
 
-document.getElementById("RegisterButton").addEventListener('click',()=>{
-    location.href = "./register.php";
+document.getElementById("WymianaButton").addEventListener('click',()=>{
+    var market = document.getElementById("Marketplace");
+    var wymiana = document.getElementById("WymianaLive");
+    var konto = document.getElementById("MojeKonto");
+    market.style.display  = 'none';
+    wymiana.style.display  = 'block';
+    konto.style.display  = 'none';
+});
+
+document.getElementById("KontoButton").addEventListener('click',()=>{
+    var market = document.getElementById("Marketplace");
+    var wymiana = document.getElementById("WymianaLive");
+    var konto = document.getElementById("MojeKonto");
+    market.style.display  = 'none';
+    wymiana.style.display  = 'none';
+    konto.style.display  = 'block';
 });

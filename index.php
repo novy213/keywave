@@ -27,12 +27,18 @@ else{
     </div>
     <div class="container">
         <form method="post">
-            <button class="Logout">Marketplace</button>
-            <button class="Logout">Wymiana live</button>
-            <button class="Logout">Moje konto</button>
+            <button class="Logout" id="MarketplaceButton">Marketplace</button>
+            <button class="Logout" id="WymianaButton">Wymiana live</button>
+            <button class="Logout" id="KontoButton">Moje konto</button>
         </form>
-        <div class="item">
-            <p>test</p>
+        <div class="Marketplace">
+            <h1 style="color: #fff">Marketplace</h1>
+        </div>
+        <div class="WymianaLive" style="display: none">
+            <h1 style="color: #fff">Wymiana live</h1>
+        </div>
+        <div class="MojeKonto" style="display: none">
+            <h1 style="color: #fff">Moje konto</h1>
         </div>
     </div>
 </center>
